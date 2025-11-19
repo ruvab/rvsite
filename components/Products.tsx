@@ -1,0 +1,248 @@
+import { Button } from '@/components/ui/button';
+import { trackEvent } from '@/lib/analytics';
+
+export default function Products() {
+  const handleLearnMore = (product: string) => {
+    trackEvent('learn_more', 'product', product);
+    if (product === 'trend_solver') {
+      window.open('https://trendsolver.ruvab.it.com', '_blank');
+    } else if (product === 'langscribe') {
+      window.open('https://langscribe.ruvab.it.com', '_blank');
+    } else if (product === 'qr_gen_tool') {
+      window.open('https://qr-gen.ruvab.it.com', '_blank');
+    } else if (product === 'fyppal') {
+      window.open('https://fyppal.ruvab.it.com', '_blank');
+    } else if (product === 'agehealthy') {
+      window.open('https://agehealthy.in/', '_blank');
+    } else if (product === 'revenueai') {
+      window.location.href = '/revenueai';
+    }
+  };
+
+  return (
+    <section id="products" className="py-12 sm:py-16 lg:py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 sm:mb-16">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Featured Products</h2>
+          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
+            Discover our cutting-edge solutions designed to solve real-world business challenges and accelerate your digital transformation.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+          {/* Trend Solver Product */}
+          <div className="bg-gradient-to-br from-blue-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="mb-4 sm:mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+                alt="AI-powered analytics dashboard showing trend analysis"
+                className="rounded-xl w-full h-40 sm:h-48 object-cover"
+              />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Trend Solver</h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              Advanced AI-powered market analysis tool that identifies emerging trends, predicts market movements, and provides actionable insights for strategic decision-making.
+            </p>
+            <ul className="space-y-2 mb-4 sm:mb-6">
+              <li className="flex items-center text-sm sm:text-base text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Real-time market trend analysis
+              </li>
+              <li className="flex items-center text-sm sm:text-base text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Predictive analytics and forecasting
+              </li>
+              <li className="flex items-center text-sm sm:text-base text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Automated reporting and alerts
+              </li>
+            </ul>
+            <Button
+              onClick={() => handleLearnMore('trend_solver')}
+              className="bg-primary text-white hover:bg-blue-700 transition-colors w-full text-sm sm:text-base"
+            >
+              Launch TrendSolver
+            </Button>
+          </div>
+          
+          {/* LangScribe Product */}
+          <div className="bg-gradient-to-br from-purple-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="mb-4 sm:mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+                alt="Content creation workspace with AI-powered writing tools"
+                className="rounded-xl w-full h-40 sm:h-48 object-cover"
+              />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">LangScribe</h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              Intelligent content creation platform that leverages natural language processing to generate high-quality, SEO-optimized content for various business needs.
+            </p>
+            <ul className="space-y-2 mb-6">
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                AI-powered content generation
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                SEO optimization and analysis
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Multi-language support
+              </li>
+            </ul>
+            <Button
+              onClick={() => handleLearnMore('langscribe')}
+              className="bg-purple-600 text-white hover:bg-purple-700 transition-colors w-full"
+            >
+              Launch LangScribe
+            </Button>
+          </div>
+
+          {/* FYPPAL Product */}
+          <div className="bg-gradient-to-br from-cyan-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="mb-4 sm:mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1553484771-371a605b060b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+                alt="Team collaboration and management dashboard"
+                className="rounded-xl w-full h-40 sm:h-48 object-cover"
+              />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">FYPPAL</h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              Find Your Passion, Find Your Pal - Transform your IT experience into freelance opportunities with personalized micro-niche gig plans and professional resume reviews.
+            </p>
+            <ul className="space-y-2 mb-4 sm:mb-6">
+              <li className="flex items-center text-sm sm:text-base text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Personalized freelance gig plans
+              </li>
+              <li className="flex items-center text-sm sm:text-base text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                AI-powered skill matching
+              </li>
+              <li className="flex items-center text-sm sm:text-base text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Professional resume reviews
+              </li>
+            </ul>
+            <Button
+              onClick={() => handleLearnMore('fyppal')}
+              className="bg-cyan-600 text-white hover:bg-cyan-700 transition-colors w-full text-sm sm:text-base"
+            >
+              Start Your Escape Plan
+            </Button>
+          </div>
+
+          {/* QR Gen Tool Product */}
+          <div className="bg-gradient-to-br from-green-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="mb-4 sm:mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+                alt="Professional QR code with smartphone scanning"
+                className="rounded-xl w-full h-40 sm:h-48 object-cover"
+              />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">QR Gen Tool</h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              Professional QR code generator with advanced customization options, bulk generation, and analytics tracking for marketing campaigns and business applications.
+            </p>
+            <ul className="space-y-2 mb-6">
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Custom QR code design & colors
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Bulk generation & download
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Analytics & scan tracking
+              </li>
+            </ul>
+            <Button
+              onClick={() => handleLearnMore('qr_gen_tool')}
+              className="bg-green-600 text-white hover:bg-green-700 transition-colors w-full"
+            >
+              Launch QR Gen Tool
+            </Button>
+          </div>
+
+          {/* AgeHealthy Product */}
+          <div className="bg-gradient-to-br from-orange-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="mb-4 sm:mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+                alt="Health and wellness tracking with modern technology"
+                className="rounded-xl w-full h-40 sm:h-48 object-cover"
+              />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">AgeHealthy</h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              Age smarter, live healthier - Your comprehensive health and wellness companion that helps you track, manage, and optimize your health journey with personalized insights.
+            </p>
+            <ul className="space-y-2 mb-6">
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Health tracking & monitoring
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Personalized health insights
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Wellness recommendations
+              </li>
+            </ul>
+            <Button
+              onClick={() => handleLearnMore('agehealthy')}
+              className="bg-orange-600 text-white hover:bg-orange-700 transition-colors w-full"
+              data-testid="button-agehealthy"
+            >
+              Launch AgeHealthy
+            </Button>
+          </div>
+
+          {/* RevenueAI Product */}
+          <div className="bg-gradient-to-br from-emerald-50 to-white p-6 sm:p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow">
+            <div className="mb-4 sm:mb-6">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400"
+                alt="AI-powered revenue optimization and analytics dashboard"
+                className="rounded-xl w-full h-40 sm:h-48 object-cover"
+              />
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">RevenueAI</h3>
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              Intelligent revenue optimization platform powered by AI that maximizes your monetization potential through advanced analytics, predictive modeling, and automated optimization.
+            </p>
+            <ul className="space-y-2 mb-6">
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                AI-powered revenue optimization
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Real-time monetization insights
+              </li>
+              <li className="flex items-center text-gray-700">
+                <span className="text-accent mr-2">✓</span>
+                Automated revenue strategies
+              </li>
+            </ul>
+            <Button
+              onClick={() => handleLearnMore('revenueai')}
+              className="bg-emerald-600 text-white hover:bg-emerald-700 transition-colors w-full"
+              data-testid="button-revenueai"
+            >
+              Explore RevenueAI
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
